@@ -4,39 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그 목록</title>
+<title>인증토큰 발급</title>
 </head>
 <body>
 
-<!-- 
-<table>
-	<thead>
-		<tr>
-			<th>메시지ID</th>
-			<th>요청시그널</th>
-			<th>요청시간</th>
-			<th>송신사업자번호</th>
-			<th>인증코드</th>
-			<th>스마트빌 아이디</th>
-			<th>유효기간 설정코드</th>
-			<th>인증토큰 만료일</th>
-	</thead>
-	
-	<tbody>
-		<tr>
-			<td><input type="text" name="MessageId" value="test-0001" /></td>
-			<td><input type="text" name="Signal" value="GET_TOKEN" /></td>
-			<td><input type="text" name="RequestTime" value="${time14}" /></td>
-			<td><input type="text" name="SendComRegno" value="1000000004" /></td>
-			<td><input type="text" name="AuthCode" value="E0F3A017681940C8B2BD9B4AED8D05D0" /></td>
-			<td><input type="text" name="SbId" value="1000000004" /></td>
-			<td><input type="text" name="ExpirationDateCode" value="Z" /></td>
-			<td><input type="text" name="ExpirationDate" value="" /></td>
-		</tr>
-	</tbody>
-	
-</table>
--->
+<div id="nav">
+	<%@ include file="../include/nav.jsp" %>
+</div>
 
 <form method="post">
 	<label>메시지ID</label>
@@ -58,15 +32,27 @@
 	<input type="text" name="SbId" value="1000000004" /><br/>
 	
 	<label>유효기간 설정코드</label>
-	<input type="text" name="ExpirationDateCode" value="Z" /><br/>
+	<select name="ExpirationDateCode">
+		<option value="D">1일</option>
+		<option value="W">7일</option>
+		<option value="H">15일</option>
+		<option value="M">30일</option>
+		<option value="Q">90일</option>
+		<option value="R">180일</option>
+		<option value="Y">365일</option>
+		<option value="Z">영구 사용</option>
+		<option value="C">사용자 지정</option>
+	</select><br/>
 	
-	<label>인증토큰 만료일</label>
-	<input type="text" name="ExpirationDate" value="" /><br/>
+	<label>인증토큰 만료일(사용자 지정 시 입력)</label>
+	<input type="text" name="ExpirationDate" value="${time_8}" /><br/>
 	
-	<label>인증토큰</label>
-	${token}<br />
+	<button type="submit">발급</button><br />
 	
-	<button type="submit">발급</button>
+	<label>처리결과</label>
+	${result}<br />
+	
+
 </form>
 
 </body>

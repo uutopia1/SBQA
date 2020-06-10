@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.SBQA.api.Get_token_;
 import com.SBQA.domain.ApiVO;
 import com.SBQA.domain.SBQAVO;
 
@@ -16,7 +15,6 @@ public class SBQADAOImpl implements SBQADAO {
 
 	@Inject
 	private SqlSession sql;
-	private Get_token_ get_token;
 	
 	private static String namespace = "com.SBQA.mappers.SBQA";
 	
@@ -31,7 +29,7 @@ public class SBQADAOImpl implements SBQADAO {
 
 	public void get_token(ApiVO vo) throws Exception {
 		
-		get_token.get_token(vo);
+		
 	}
 	
 }

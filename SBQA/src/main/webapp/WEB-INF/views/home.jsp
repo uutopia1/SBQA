@@ -7,13 +7,19 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	SBQA  
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
 
+<div id="nav">
+	<%@ include file="./include/nav.jsp" %>
+</div>
+
+<!-- 
 <p><a href="/SBQA/log">로그 목록</a></p>
 <p><a href="/SBQA/get_token">인증토큰 발급</a>
-
+ -->
+ 
 </body>
 </html>

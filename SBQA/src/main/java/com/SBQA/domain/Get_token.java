@@ -5,6 +5,8 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,7 +16,8 @@ public class Get_token {
 
 	public String get_token (ApiVO vo) throws Exception {
 		JSONObject jsonObj = new JSONObject();
-		String strAuthToken = "";
+		String result = "";
+
 		try {
 			//request
 			jsonObj.put("MessageId", vo.getMessageId());
@@ -40,6 +43,7 @@ public class Get_token {
 			os.write(jsonObj.toString().getBytes());
 			os.flush();
 			os.close();
+		
 			
 			//response		
 			BufferedReader br;
@@ -63,18 +67,20 @@ public class Get_token {
 			            
 			    JSONObject jsonTable = (JSONObject)jsonArray.get(0);
 			            
-			    strAuthToken = jsonTable.get("AUTH_TOKEN").toString();  // 인증토큰 추출
+			    result = jsonTable.toString();  // 인증토큰 추출
 			    //System.out.println(strAuthToken);
 			}
 			else{
-			    System.out.println(jsonResponse.getString("ResultMessage"));
+			    //System.out.println(jsonResponse.getString("ResultMessage"));
+			    
+			    result = jsonResponse.getString("ResultMessage");
 			}
 
 		}catch (Exception e){
-			
-		}
+			result = e.getMessage();
+		}		
 		
-		return strAuthToken;
+		return result;
 	}
 
 }
