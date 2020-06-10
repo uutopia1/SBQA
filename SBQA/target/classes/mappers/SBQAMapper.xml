@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.SBQA.mappers.SBQA">
+
+	<!-- 로그 목록 -->
+	<select id="log" resultType="com.SBQA.domain.SBQAVO">
+		select
+			bno, conversation_id, message_id, issue_id, regDate, original_xml
+		from tbl_log
+	</select>
+
+</mapper>
