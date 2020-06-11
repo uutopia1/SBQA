@@ -16,7 +16,7 @@ public class ApiVO {
 	private String SearchToDate;
 	private String SearchComRegno;
 	private String SupBuy_Type;
-	private String IssueId;
+	private String[] IssueId;
 	
 	public String getMessageId() {
 		return MessageId;
@@ -108,10 +108,10 @@ public class ApiVO {
 	public void setSupBuy_Type(String supBuy_Type) {
 		this.SupBuy_Type = supBuy_Type;
 	}
-	public String getIssueId() {
+	public String[] getIssueId() {
 		return IssueId;
 	}
-	public void setIssueId(String issueId) {
+	public void setIssueId(String[] issueId) {
 		this.IssueId = issueId;
 	}
 		

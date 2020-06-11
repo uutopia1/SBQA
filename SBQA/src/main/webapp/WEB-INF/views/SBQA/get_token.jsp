@@ -47,10 +47,13 @@
 	<label>인증토큰 만료일(사용자 지정 시 입력)</label>
 	<input type="text" name="ExpirationDate" value="${time_8}" /><br/>
 	
-	<button type="submit">발급</button><br />
+	<button type="submit">발급</button><br /><br />
 	
-	<label>처리결과</label>
-	${result}<br />
+	<label>request</label>
+	<br />${result0}<br /><br />
+	
+	<label>response</label>
+	<br />${result1}<br />
 	
 
 </form>

@@ -7,7 +7,7 @@
 		<a href="/">홈</a>
 	</li>
 	<li>
-		<a href="/SBQA/log">로그 목록</a>
+		<a href="/SBQA/log">로그 목록(TEST)</a>
 	</li>
 	<li>
 		OAPIS
@@ -17,6 +17,9 @@
 	</li>
 	<li>
 		<a href="/SBQA/os_dti_list">보관함 조회</a>
+	</li>
+		<li>
+		<a href="/SBQA/os_dti_xml">원본 조회</a>
 	</li>
 </ul>
 

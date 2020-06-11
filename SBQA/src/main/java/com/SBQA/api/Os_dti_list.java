@@ -1,4 +1,4 @@
-package com.SBQA.domain;
+package com.SBQA.api;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -9,10 +9,12 @@ import java.net.URL;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.SBQA.domain.ApiVO;
+
 public class Os_dti_list {
 	
-	public String os_dti_list(ApiVO vo) throws Exception {
-		String result = "";
+	public String[] os_dti_list(ApiVO vo) throws Exception {
+		String[] result = new String[2];
 		
 		try {
 			
@@ -43,7 +45,7 @@ public class Os_dti_list {
 			os.flush();
 			os.close();
 
-			
+			result[0] = jsonObj.toString();
 			
 			BufferedReader br;
 			String response = "";
@@ -56,6 +58,8 @@ public class Os_dti_list {
 			        response += line + "\n";
 			    }
 			}
+			
+			result[1] = response;
 
 			JSONObject jsonResponse = new JSONObject(response);
 
@@ -90,23 +94,23 @@ public class Os_dti_list {
 				   System.out.println(jsonTable.get("TOTAL_AMOUNT").toString());   // 총금액
 				   System.out.println(jsonTable.get("TOTAL_CNT").toString());      // 데이터 총건수
 				   
-				   result += jsonTable.toString();
+				   //result += jsonTable.toString();
 
 			        }
 			    }
 			    else {
 			        System.out.println("데이터가 존재하지 않습니다.");
-			        result = "데이터가 존재하지 않습니다.";
+			        //result = "데이터가 존재하지 않습니다.";
 			    }
 			}
 			else{
 			    System.out.println(jsonResponse.getString("ResultMessage"));
-			    result = jsonResponse.getString("ResultMessage");
+			    //result = jsonResponse.getString("ResultMessage");
 			}
 
 			
 		} catch (Exception e) {
-			result = e.getMessage();
+			result[1] = e.getMessage();
 		}
 		
 		return result;

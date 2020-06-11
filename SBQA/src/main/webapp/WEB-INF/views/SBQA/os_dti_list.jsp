@@ -53,11 +53,13 @@
 		<option value="AP">매입</option>
 	</select><br/>
 	
-	<button type="submit">조회</button><br />
+	<button type="submit">조회</button><br /><br />
 	
-	<label>처리결과</label>
-	${result}<br />
+	<label>request</label>
+	<br />${result0}<br /><br />
 	
+	<label>response</label>
+	<br />${result1}<br />
 
 </form>
 
