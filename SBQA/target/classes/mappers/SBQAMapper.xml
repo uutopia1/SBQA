@@ -10,5 +10,37 @@
 			bno, conversation_id, message_id, issue_id, regDate, original_xml
 		from tbl_log
 	</select>
+	
+	<!-- xml 저장 -->
+	<insert id="save_xml" parameterType="hashMap">
+		insert into
+			tbl_xml(xml, issueId)
+				values (#{xml}, #{issueId})
+	</insert>
 
+	<!-- xml 목록 -->
+	<select id="xml_list" resultType="com.SBQA.domain.DBXmlVO">
+		select
+			bno, xml, regDate, issueId
+		from tbl_xml
+	</select>
+	
+	<!-- xml조회 -->
+	<select id="xml_view" parameterType="int" resultType="com.SBQA.domain.DBXmlVO">
+		select
+			xml
+		from 
+			tbl_xml
+		where
+			bno = #{bno}
+	</select>
+	
+	<!-- xml삭제 -->
+	<delete id="delete" parameterType="int">
+		delete
+			from tbl_xml
+		where
+			bno = #{bno}
+	</delete>
+	
 </mapper>

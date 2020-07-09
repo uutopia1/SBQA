@@ -3,34 +3,47 @@ package com.SBQA.api;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.SBQA.domain.ApiVO;
 
-public class Get_token {
+public class Arissue {
 	
-
-	public String[] get_token (ApiVO vo) throws Exception {
-		JSONObject jsonObj = new JSONObject();
+	public String[] arissue(ApiVO vo) throws Exception {
 		String[] result = new String[2];
-
+		
 		try {
-			//request
+			
+			String[] arrConvId = {vo.getConversationId()};
+			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("MessageId", vo.getMessageId());
 			jsonObj.put("Signal", vo.getSignal());
 			jsonObj.put("RequestTime", vo.getRequestTime());
-			jsonObj.put("SendComRegno", vo.getSendComRegno());
-			jsonObj.put("AuthCode", vo.getAuthCode());
-			jsonObj.put("SbId", vo.getSbId());
-			jsonObj.put("ExpirationDateCode", vo.getExpirationDateCode());
-			jsonObj.put("ExpirationDate", vo.getExpirationDate());
-	
+			jsonObj.put("SendComRegno", vo.getSendComRegno()); 
+			jsonObj.put("ReceiveComRegno", vo.getReceiveComRegno());
+			jsonObj.put("AuthToken", vo.getAuthToken());
+			jsonObj.put("ServiceCode", vo.getServiceCode());
+			jsonObj.put("SystemType", vo.getSystemType());
+			jsonObj.put("ConversationId", arrConvId); 
+			jsonObj.put("SMTPEmail", vo.getSMTPEmail()); 
+			jsonObj.put("RValue", vo.getRValue()); // 서명모듈 이용해서 발행할 경우에만 필요
+			jsonObj.put("CertPassword", vo.getCertPassword()); // 암호화된 인증서의 비밀번호
+			jsonObj.put("SystemId", vo.getSystemId());
+			jsonObj.put("PlatformCode", vo.getPlatformCode()); // 허브업체의 구분코드
+			jsonObj.put("SignedXML", vo.getSignedXML());  // 서명정보가 있는 세금계산서 xml
+
 			URL url = new URL("http://demoapi.smartbill.co.kr/sb-api/request/");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("POST");
@@ -40,17 +53,14 @@ public class Get_token {
 			conn.setConnectTimeout(10000);
 			conn.setRequestProperty("Content-Type", "application/json");
 			conn.setRequestProperty("Accept", "application/json");
-	
 			DataOutputStream os = new DataOutputStream(conn.getOutputStream());
 			os.write(jsonObj.toString().getBytes());
+			os.flush();
+			os.close();
 			
 			result[0] = jsonObj.toString();
 			
-			os.flush();
-			os.close();
-		
 			
-			//response		
 			BufferedReader br;
 			String response = "";
 
@@ -65,29 +75,23 @@ public class Get_token {
 			
 			result[1] = response;
 
-			//String strAuthToken = "";
 			JSONObject jsonResponse = new JSONObject(response);
 
 			if("30000".equalsIgnoreCase(jsonResponse.getString("ResultCode"))){
-			    JSONObject jsonResultDataSet = (JSONObject) jsonResponse.get("ResultDataSet");
-			    JSONArray jsonArray = (JSONArray) jsonResultDataSet.get("Table1");
-			            
-			    JSONObject jsonTable = (JSONObject)jsonArray.get(0);
-			            
-			    //result = jsonTable.toString();  // 인증토큰 추출
-			    //System.out.println(strAuthToken);
+			    System.out.println(jsonResponse.getString("ResultMessage"));
 			}
 			else{
 			    System.out.println(jsonResponse.getString("ResultMessage"));
-			    
-			    //result = jsonResponse.getString("ResultMessage");
 			}
 
-		}catch (Exception e){
+			
+		} catch(Exception e) {
+			result[0] = e.getMessage();
 			result[1] = e.getMessage();
-		}		
+		}
 		
-		return result;
+		
+		return result;		
+		
 	}
-
 }

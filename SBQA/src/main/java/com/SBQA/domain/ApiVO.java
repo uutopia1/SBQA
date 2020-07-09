@@ -5,8 +5,17 @@ public class ApiVO {
 	private String Signal;
 	private String RequestTime;
 	private String SendComRegno;
+	private String ReceiveComRegno;
 	private String AuthToken;
 	private String ServiceCode;
+	private String SystemType;
+	private String ConversationId;
+	private String SMTPEmail;
+	private String RValue;
+	private String CertPassword;
+	private String SignedXML;
+	private String SystemId;
+	private String PlatformCode;
 	private String AuthCode;
 	private String SbId;
 	private String ExpirationDateCode;
@@ -41,6 +50,61 @@ public class ApiVO {
 	}
 	public void setSendComRegno(String sendComRegno) {
 		this.SendComRegno = sendComRegno;
+	}
+	
+	public String getReceiveComRegno() {
+		return ReceiveComRegno;
+	}
+	public void setReceiveComRegno(String receiveComRegno) {
+		ReceiveComRegno = receiveComRegno;
+	}
+	public String getSystemType() {
+		return SystemType;
+	}
+	public void setSystemType(String systemType) {
+		SystemType = systemType;
+	}
+	public String getConversationId() {
+		return ConversationId;
+	}
+	public void setConversationId(String conversationId) {
+		ConversationId = conversationId;
+	}
+	public String getSMTPEmail() {
+		return SMTPEmail;
+	}
+	public void setSMTPEmail(String sMTPEmail) {
+		SMTPEmail = sMTPEmail;
+	}
+	public String getRValue() {
+		return RValue;
+	}
+	public void setRValue(String rValue) {
+		RValue = rValue;
+	}
+	public String getCertPassword() {
+		return CertPassword;
+	}
+	public void setCertPassword(String certPassword) {
+		CertPassword = certPassword;
+	}
+	public String getSignedXML() {
+		return SignedXML;
+	}
+	public void setSignedXML(String signedXML) {
+		SignedXML = signedXML;
+	}
+	public String getSystemId() {
+		return SystemId;
+	}
+	public void setSystemId(String systemId) {
+		SystemId = systemId;
+	}
+	public String getPlatformCode() {
+		return PlatformCode;
+	}
+	public void setPlatformCode(String platformCode) {
+		PlatformCode = platformCode;
 	}
 	public String getAuthCode() {
 		return AuthCode;

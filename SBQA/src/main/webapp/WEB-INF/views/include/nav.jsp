@@ -19,7 +19,16 @@
 		<a href="/SBQA/os_dti_list">보관함 조회</a>
 	</li>
 		<li>
-		<a href="/SBQA/os_dti_xml">원본 조회</a>
+		<a href="/SBQA/os_dti_xml">xml원본 조회</a>
+	</li>
+	<li>
+		OAPI
+	</li>
+	<li>
+		<a href="/SBQA/write_xml">xml원본 작성</a>
+	</li>
+	<li>
+		<a href="/SBQA/xml_list">xml원본 목록</a>
 	</li>
 </ul>
 

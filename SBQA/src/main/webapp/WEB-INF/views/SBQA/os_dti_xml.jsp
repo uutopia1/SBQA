@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>원본 조회</title>
+
 <!-- 승인번호 다중건 처리를 위해서 input 추가, 삭제 기능  -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>        
     <script>            
@@ -21,6 +22,8 @@
             }); // end click                                            
         }); // end ready        
 </script>
+<!-- //승인번호 다중건 처리를 위해서 input 추가, 삭제 기능  -->
+
 </head>
 <body>
 

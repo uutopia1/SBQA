@@ -1,5 +1,6 @@
 package com.SBQA.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -8,7 +9,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.SBQA.domain.ApiVO;
+import com.SBQA.domain.DBXmlVO;
 import com.SBQA.domain.SBQAVO;
+import com.SBQA.domain.XmlVO;
 
 @Repository
 public class SBQADAOImpl implements SBQADAO {
@@ -26,10 +29,40 @@ public class SBQADAOImpl implements SBQADAO {
 	}
 	
 	//인증토큰 발급
-
+	@Override
 	public void get_token(ApiVO vo) throws Exception {
 		
 		
 	}
+	
+	//xml 저장
+	@Override
+	public void save_xml(HashMap<String, Object> data) throws Exception{
+		
+		sql.insert(namespace + ".save_xml", data);
+	}
+	
+	//xml 목록
+	@Override
+	public List<DBXmlVO> xml_list() throws Exception {
+		
+		return sql.selectList(namespace + ".xml_list");
+	}
+	
+	//xml 조회
+	@Override
+	public DBXmlVO xml_view(int bno) throws Exception {
+		
+		return sql.selectOne(namespace + ".xml_view", bno);
+		
+	}
+		
+	//xml 삭제
+	@Override
+	public void delete(int bno) throws Exception {
+		
+		sql.delete(namespace + ".delete", bno);
+	}
+		
 	
 }

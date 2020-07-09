@@ -1,5 +1,6 @@
 package com.SBQA.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -8,7 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.SBQA.dao.SBQADAO;
 import com.SBQA.domain.ApiVO;
+import com.SBQA.domain.DBXmlVO;
 import com.SBQA.domain.SBQAVO;
+import com.SBQA.domain.XmlVO;
 
 @Service
 public class SBQAServiceImpl implements SBQAService {
@@ -29,5 +32,34 @@ public class SBQAServiceImpl implements SBQAService {
 	 
 	 dao.get_token(vo);
  }
+ 
+//xml 저장
+@Override
+public void save_xml(HashMap<String, Object> data) throws Exception {
+	
+	dao.save_xml(data);
+}
+
+//xml 목록
+@Override
+public List<DBXmlVO> xml_list() throws Exception {
+	
+	return dao.xml_list();
+}
+
+//xml 조회
+@Override
+public DBXmlVO xml_view(int bno) throws Exception {
+	
+	return dao.xml_view(bno);
+}
+
+//xml 삭제
+@Override
+public void delete(int bno) throws Exception {
+	
+	dao.delete(bno);
+}
+
 
 }
