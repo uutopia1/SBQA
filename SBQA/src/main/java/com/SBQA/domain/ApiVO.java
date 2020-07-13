@@ -14,6 +14,7 @@ public class ApiVO {
 	private String RValue;
 	private String CertPassword;
 	private String SignedXML;
+	private String UnSignedXML;
 	private String SystemId;
 	private String PlatformCode;
 	private String AuthCode;
@@ -93,6 +94,13 @@ public class ApiVO {
 	}
 	public void setSignedXML(String signedXML) {
 		SignedXML = signedXML;
+	}
+	
+	public String getUnSignedXML() {
+		return UnSignedXML;
+	}
+	public void setUnSignedXML(String unSignedXML) {
+		UnSignedXML = unSignedXML;
 	}
 	public String getSystemId() {
 		return SystemId;

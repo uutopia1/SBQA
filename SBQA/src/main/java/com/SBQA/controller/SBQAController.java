@@ -13,11 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.SBQA.api.AesCrypto;
 import com.SBQA.api.Arissue;
+import com.SBQA.api.Dti_save;
 import com.SBQA.api.Get_token;
 import com.SBQA.api.Os_dti_list;
 import com.SBQA.api.Os_dti_xml;
 import com.SBQA.api.Preview_form;
+import com.SBQA.api.Rarrequest;
 import com.SBQA.api.Write_xml;
 import com.SBQA.domain.ApiVO;
 import com.SBQA.domain.DBXmlVO;
@@ -259,27 +262,113 @@ public class SBQAController {
 	}
 	
 	//발행 post
-		@RequestMapping(value = "/arissue", method=RequestMethod.POST)
-		public void postArissue(Model model, ApiVO vo) throws Exception {
+	@RequestMapping(value = "/arissue", method=RequestMethod.POST)
+	public void postArissue(Model model, ApiVO vo) throws Exception {
 			
-			//현재시간 설정
-			Date time = new Date();
-			String time14 = format14.format(time);
-			String time10 = format10.format(time);
+		//현재시간 설정
+		Date time = new Date();
+		String time14 = format14.format(time);
+		String time10 = format10.format(time);
 
-			model.addAttribute("time14", time14);
-			model.addAttribute("time10", time10);
+		model.addAttribute("time14", time14);
+		model.addAttribute("time10", time10);
 			
-			Arissue ai = new Arissue();
-			String[] result = null;
+		Arissue ai = new Arissue();
+		String[] result = null;
+		
+		//인증서비밀번호 암호화
+		String CertPassword = vo.getCertPassword();
+		AesCrypto ac = new AesCrypto();
+		String CertPassword_AesCrypto = ac.Encrypt(CertPassword);
+		vo.setCertPassword(CertPassword_AesCrypto);
+		
+		//발행 api
+		result= ai.arissue(vo);
 			
-			result= ai.arissue(vo);
-			
-			model.addAttribute("result0", result[0]);
-			model.addAttribute("result1", result[1]);
+		model.addAttribute("result0", result[0]);
+		model.addAttribute("result1", result[1]);
 
-		}
+	}
+	
+	//저장 get
+	@RequestMapping(value = "/dti_save", method=RequestMethod.GET)
+	public void getDti_save(Model model, @RequestParam("bno") int bno) throws Exception {
+		
+		//현재시간 설정
+		Date time = new Date();
+		String time14 = format14.format(time);
+		String time10 = format10.format(time);
 
+		model.addAttribute("time14", time14);
+		model.addAttribute("time10", time10);
+				
+		DBXmlVO xml_list = service.xml_view(bno);
+		
+		model.addAttribute("xml", xml_list.getXml());
+			
+	}	
+	
+	//저장 post
+	@RequestMapping(value = "/dti_save", method=RequestMethod.POST)
+	public void postDti_save(Model model, ApiVO vo) throws Exception {
+				
+		//현재시간 설정
+		Date time = new Date();
+		String time14 = format14.format(time);
+		String time10 = format10.format(time);
+
+		model.addAttribute("time14", time14);
+		model.addAttribute("time10", time10);
+				
+		Dti_save ds = new Dti_save();
+		String[] result = null;
+				
+		result= ds.dti_save(vo);
+				
+		model.addAttribute("result0", result[0]);
+		model.addAttribute("result1", result[1]);
+
+	}		
+
+	//역발행요청 get
+	@RequestMapping(value = "/rarrequest", method=RequestMethod.GET)
+	public void getRarrequest(Model model, @RequestParam("bno") int bno) throws Exception {
+		
+		//현재시간 설정
+		Date time = new Date();
+		String time14 = format14.format(time);
+		String time10 = format10.format(time);
+
+		model.addAttribute("time14", time14);
+		model.addAttribute("time10", time10);
+				
+		DBXmlVO xml_list = service.xml_view(bno);
+		
+		model.addAttribute("xml", xml_list.getXml());
+			
+	}	
+	
+	//역발행요청 post
+	@RequestMapping(value = "/rarrequest", method=RequestMethod.POST)
+	public void postRarrequest(Model model, ApiVO vo) throws Exception {
+				
+		//현재시간 설정
+		Date time = new Date();
+		String time14 = format14.format(time);
+		String time10 = format10.format(time);
+
+		model.addAttribute("time14", time14);
+		model.addAttribute("time10", time10);
+				
+		Rarrequest rr = new Rarrequest();
+		String[] result = null;
+				
+		result= rr.rarrequest(vo);
+				
+		model.addAttribute("result0", result[0]);
+		model.addAttribute("result1", result[1]);
+
+	}
 
 	
 }

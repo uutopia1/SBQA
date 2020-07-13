@@ -25,10 +25,16 @@
 		OAPI
 	</li>
 	<li>
-		<a href="/SBQA/write_xml">xml원본 작성</a>
+		<a href="/SBQA/write_xml">xml원본 작성(매출전표)</a>
 	</li>
 	<li>
-		<a href="/SBQA/xml_list">xml원본 목록</a>
+		<a href="/SBQA/xml_list">xml원본 목록(매출전표)</a>
+	</li>
+	<li>
+		<a href="/SBQA/write_xml_ap">xml원본 작성(매입전표)</a>
+	</li>
+	<li>
+		<a href="/SBQA/xml_list_ap">xml원본 목록(매입전표)</a>
 	</li>
 </ul>
 

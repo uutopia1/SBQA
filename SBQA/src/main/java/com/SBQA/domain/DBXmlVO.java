@@ -8,6 +8,7 @@ public class DBXmlVO {
 	private String xml;
 	private Date regDate;
 	private String issueId;
+	private String arap;
 	
 	public int getBno() {
 		return bno;
@@ -32,6 +33,12 @@ public class DBXmlVO {
 	}
 	public void setIssueId(String issueId) {
 		this.issueId = issueId;
+	}
+	public String getArap() {
+		return arap;
+	}
+	public void setArap(String arap) {
+		this.arap = arap;
 	}
 	
 	

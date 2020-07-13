@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>xml원본 작성(매출전표)</title>
+<title>xml원본 작성(매입전표)</title>
 
 <!-- 승인번호 다중건 처리를 위해서 input 추가, 삭제 기능  -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>        
@@ -84,7 +84,7 @@
 	
 	<br/><label>공급자정보</label><br/>	
 	<label>사업자등록번호</label>
-	<input type="text" name="TaxInvoiceTradeSettlement_InvoicerParty_ID" value="1000000004" /><br/>	
+	<input type="text" name="TaxInvoiceTradeSettlement_InvoicerParty_ID" value="1000000005" /><br/>	
 	<label>업태</label>
 	<input type="text" name="TaxInvoiceTradeSettlement_InvoicerParty_TypeCode" value="" /><br/>	
 	<label>상호</label>
@@ -109,7 +109,7 @@
 	
 	<br/><label>공급받는자정보</label><br/>	
 	<label>사업자등록번호</label>
-	<input type="text" name="TaxInvoiceTradeSettlement_InvoiceeParty_ID" value="1000000005" /><br/>	
+	<input type="text" name="TaxInvoiceTradeSettlement_InvoiceeParty_ID" value="1000000004" /><br/>	
 	<label>업태</label>
 	<input type="text" name="TaxInvoiceTradeSettlement_InvoiceeParty_TypeCode" value="" /><br/>	
 	<label>상호</label>

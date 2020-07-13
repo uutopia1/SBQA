@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>xml원본 목록(매출전표)</title>
+<title>xml원본 목록(매입전표)</title>
 </head>
 <body>
 
@@ -39,14 +39,10 @@
 				</td>				
 				<td>
 				<a href="/SBQA/delete?bno=${xml_list.bno}">삭제</a>
-				</td>
+				</td>				
 				<td>
-				<a href="/SBQA/dti_save?bno=${xml_list.bno}">저장</a>
+				<a href="/SBQA/rarrequest?bno=${xml_list.bno}">역발행요청</a>
 				</td>
-				<td>
-				<a href="/SBQA/arissue?bno=${xml_list.bno}">발행</a>
-				</td>
-
 
 			</tr>
 		</c:forEach>
