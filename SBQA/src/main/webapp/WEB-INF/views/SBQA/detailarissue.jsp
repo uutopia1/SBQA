@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>역발행요청</title>
+<title>발행</title>
 </head>
 <body>
 
@@ -13,12 +13,11 @@
 </div>
 
 <form method="post">
-
 	<label>메시지ID</label>
 	<input type="text" name="MessageId" value="sbqa-${time14}" /><br/>
 	
 	<label>요청시그널</label>
-	<input type="text" name="Signal" value="RARREQUEST" /><br/>
+	<input type="text" name="Signal" value="DETAILARISSUE" /><br/>
 	
 	<label>요청시간</label>
 	<input type="text" name="RequestTime" value="${time14}" /><br/>
@@ -39,18 +38,37 @@
 	<input type="text" name="SystemType" value="OAPI" /><br/>
 
 	<label>참조번호</label>
-	<input type="text" name="ConversationId" value="1000000005100000000420${time10}006" /><br/>
+	<input type="text" name="ConversationId" value="1000000004100000000520${time10}006" /><br/>
+	
+	<label>SMTP이메일</label>
+	<input type="text" name="SMTPEmail" value="" /><br/>
+	
+	<label>RValue</label>
+	<input type="text" name="RValue" value="" /><br/>
+	
+	<label>인증서 비밀번호</label>
+	<input type="text" name="CertPassword" value="signgate1!" /><br/>
+	
+	<label>서명원본 XML</label>
+	<input type="text" name="SignedXML" value="<c:out value="${xml}" escapeXml="true" />" /><br/>
 	
 	<label>미서명원본 XML</label>
 	<input type="text" name="UnSignedXML" value="<c:out value="${xml}" escapeXml="true" />" /><br/>
 	
-	<button type="submit">역발행요청</button><br /><br />
+	<label>수신시스템ID</label>
+	<input type="text" name="SystemId" value="" /><br/>
+	
+	<label>플랫폼코드</label>
+	<input type="text" name="PlatformCode" value="" /><br/>
+	
+	<button type="submit">발행</button><br /><br />
 	
 	<label>request</label>
 	<br /><c:out value="${result0}" escapeXml="true" /><br /><br />	
 	
 	<label>response</label>
-	<br />${result1}<br />	
+	<br />${result1}<br />
+	
 
 </form>
 

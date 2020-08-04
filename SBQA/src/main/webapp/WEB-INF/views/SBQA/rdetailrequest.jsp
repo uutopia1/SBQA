@@ -18,7 +18,7 @@
 	<input type="text" name="MessageId" value="sbqa-${time14}" /><br/>
 	
 	<label>요청시그널</label>
-	<input type="text" name="Signal" value="RARREQUEST" /><br/>
+	<input type="text" name="Signal" value="RDETAILREQUEST" /><br/>
 	
 	<label>요청시간</label>
 	<input type="text" name="RequestTime" value="${time14}" /><br/>
@@ -40,6 +40,9 @@
 
 	<label>참조번호</label>
 	<input type="text" name="ConversationId" value="1000000005100000000420${time10}006" /><br/>
+	
+	<label>서명원본 XML</label>
+	<input type="text" name="SignedXML" value="<c:out value="${xml}" escapeXml="true" />" /><br/>
 	
 	<label>미서명원본 XML</label>
 	<input type="text" name="UnSignedXML" value="<c:out value="${xml}" escapeXml="true" />" /><br/>

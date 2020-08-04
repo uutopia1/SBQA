@@ -19,8 +19,11 @@ public interface SBQAService {
 	//xml 저장
 	public void save_xml(HashMap<String, Object> data) throws Exception;
 	
-	//xml 목록
+	//xml 목록(매출)
 	public List<DBXmlVO> xml_list() throws Exception;
+	
+	//xml 목록(매입)
+	public List<DBXmlVO> xml_list_ap() throws Exception;
 	
 	//xml 조회
 	public DBXmlVO xml_view(int bno) throws Exception;

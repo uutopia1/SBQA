@@ -22,6 +22,7 @@
 			<th> </th>
 			<th> </th>
 			<th> </th>
+			<th> </th>
 	</thead>
 	
 	<tbody>
@@ -45,6 +46,9 @@
 				</td>
 				<td>
 				<a href="/SBQA/arissue?bno=${xml_list.bno}">발행</a>
+				</td>
+				<td>
+				<a href="/SBQA/detailarissue?bno=${xml_list.bno}">발행(+거래명세서)</a>
 				</td>
 
 

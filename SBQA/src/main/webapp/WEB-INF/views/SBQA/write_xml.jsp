@@ -214,7 +214,8 @@
 	<input type="text" name="TaxInvoiceTradeLineItem_TotalTax_CalculatedAmount" value="1" /><br/>	
 	<label>단가</label>
 	<input type="text" name="TaxInvoiceTradeLineItem_UnitPrice_UnitAmount" value="10" /><br/>
-		
+	
+		<input type="hidden" name="ARAP" value="AR">	
 	
 	<br /><button type="submit">저장</button><br />
 	

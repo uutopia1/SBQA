@@ -21,7 +21,7 @@ import com.SBQA.domain.ApiVO;
 
 public class Preview_form {
 	
-	public String preview_form(String xml) throws Exception {
+	public String preview_form(String xml, String arap) throws Exception {
 		String xsl = "";
 		String xslt = "";
 		
@@ -93,7 +93,11 @@ public class Preview_form {
 			        JSONObject jsonTable12 = (JSONObject) jsonArray.get(11); //위수탁 거래명세서(면세)
 			        System.out.println(jsonTable8.get("CONTENT").toString());
 			        
-			        xsl = jsonTable5.get("CONTENT").toString();
+			        if(arap == "ar") {
+			        	xsl = jsonTable5.get("CONTENT").toString();
+			        }else if (arap =="ap") {
+			        	xsl = jsonTable1.get("CONTENT").toString();
+			        }
 
 			    }
 			    else {

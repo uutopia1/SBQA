@@ -73,6 +73,8 @@ public class XmlVO {
 	private String TaxInvoiceTradeLineItem_TotalTax_CalculatedAmount;
 	private String TaxInvoiceTradeLineItem_UnitPrice_UnitAmount;
 	
+	private String ARAP;
+	
 	public String getExchangedDocument_ID() {
 		return ExchangedDocument_ID;
 	}
@@ -512,6 +514,14 @@ public class XmlVO {
 	public void setTaxInvoiceTradeLineItem_UnitPrice_UnitAmount(String taxInvoiceTradeLineItem_UnitPrice_UnitAmount) {
 		TaxInvoiceTradeLineItem_UnitPrice_UnitAmount = taxInvoiceTradeLineItem_UnitPrice_UnitAmount;
 	}
+	
+	public String getARAP() {
+		return ARAP;
+	}
+	public void setARAP(String aRAP) {
+		ARAP = aRAP;
+	}
+	
 	
 	
 

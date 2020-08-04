@@ -9,9 +9,9 @@
 	<li>
 		<a href="/SBQA/log">로그 목록(TEST)</a>
 	</li>
-	<li>
+
 		OAPIS
-	</li>
+
 	<li>
 		<a href="/SBQA/get_token">인증토큰 발급</a>
 	</li>
@@ -21,20 +21,26 @@
 		<li>
 		<a href="/SBQA/os_dti_xml">xml원본 조회</a>
 	</li>
-	<li>
+
 		OAPI
+
+	<li>
+		<a href="/SBQA/write_xml">xml 작성(매출)</a>
 	</li>
 	<li>
-		<a href="/SBQA/write_xml">xml원본 작성(매출전표)</a>
+		<a href="/SBQA/xml_list">xml 관리(매출)</a>
 	</li>
 	<li>
-		<a href="/SBQA/xml_list">xml원본 목록(매출전표)</a>
+		<a href="/SBQA/write_xml_ap">xml 작성(매입)</a>
 	</li>
 	<li>
-		<a href="/SBQA/write_xml_ap">xml원본 작성(매입전표)</a>
+		<a href="/SBQA/xml_list_ap">xml 관리(매입)</a>
 	</li>
 	<li>
-		<a href="/SBQA/xml_list_ap">xml원본 목록(매입전표)</a>
+		<a href="/SBQA/dti_status_list">상태 조회</a>
+	</li>
+	<li>
+		<a href="/SBQA/arap_repo">보관함 조회</a>
 	</li>
 </ul>
 

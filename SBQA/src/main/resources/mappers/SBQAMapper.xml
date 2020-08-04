@@ -11,18 +11,30 @@
 		from tbl_log
 	</select>
 	
-	<!-- xml 저장 -->
+	<!-- xml 저장(매출) -->
 	<insert id="save_xml" parameterType="hashMap">
 		insert into
-			tbl_xml(xml, issueId)
-				values (#{xml}, #{issueId})
+			tbl_xml(xml, issueId, arap)
+				values (#{xml}, #{issueId}, #{arap})
 	</insert>
 
-	<!-- xml 목록 -->
+	<!-- xml 목록(매출) -->
 	<select id="xml_list" resultType="com.SBQA.domain.DBXmlVO">
 		select
 			bno, xml, regDate, issueId
-		from tbl_xml
+		from
+			tbl_xml
+		where
+			arap = "AR"
+	</select>
+	
+		<select id="xml_list_ap" resultType="com.SBQA.domain.DBXmlVO">
+		select
+			bno, xml, regDate, issueId
+		from
+			tbl_xml
+		where
+			arap = "AP"
 	</select>
 	
 	<!-- xml조회 -->

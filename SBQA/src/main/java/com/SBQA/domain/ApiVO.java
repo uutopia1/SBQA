@@ -27,6 +27,7 @@ public class ApiVO {
 	private String SearchComRegno;
 	private String SupBuy_Type;
 	private String[] IssueId;
+	private String RepoTypeCode;
 	
 	public String getMessageId() {
 		return MessageId;
@@ -185,6 +186,12 @@ public class ApiVO {
 	}
 	public void setIssueId(String[] issueId) {
 		this.IssueId = issueId;
+	}
+	public String getRepoTypeCode() {
+		return RepoTypeCode;
+	}
+	public void setRepoTypeCode(String repoTypeCode) {
+		RepoTypeCode = repoTypeCode;
 	}
 		
 	

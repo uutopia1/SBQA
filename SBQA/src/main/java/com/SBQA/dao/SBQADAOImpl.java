@@ -42,11 +42,18 @@ public class SBQADAOImpl implements SBQADAO {
 		sql.insert(namespace + ".save_xml", data);
 	}
 	
-	//xml 목록
+	//xml 목록(매출)
 	@Override
 	public List<DBXmlVO> xml_list() throws Exception {
 		
 		return sql.selectList(namespace + ".xml_list");
+	}
+	
+	//xml 목록(매입)
+	@Override
+	public List<DBXmlVO> xml_list_ap() throws Exception {
+		
+		return sql.selectList(namespace + ".xml_list_ap");
 	}
 	
 	//xml 조회

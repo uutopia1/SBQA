@@ -478,6 +478,7 @@ public class Write_xml {
             transformer.transform(new DOMSource(doc), new StreamResult(writer));
             data.put("xml", writer.getBuffer().toString());
             data.put("issueId", vo.getTaxInvoiceDocument_IssueID());
+            data.put("arap", vo.getARAP());
 
 			
 		} catch(Exception e) {

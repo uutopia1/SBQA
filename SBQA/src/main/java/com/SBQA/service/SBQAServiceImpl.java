@@ -40,11 +40,18 @@ public void save_xml(HashMap<String, Object> data) throws Exception {
 	dao.save_xml(data);
 }
 
-//xml 목록
+//xml 목록(매출)
 @Override
 public List<DBXmlVO> xml_list() throws Exception {
 	
 	return dao.xml_list();
+}
+
+//xml 목록(매입)
+@Override
+public List<DBXmlVO> xml_list_ap() throws Exception {
+	
+	return dao.xml_list_ap();
 }
 
 //xml 조회

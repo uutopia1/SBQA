@@ -22,26 +22,30 @@
 			<th> </th>
 			<th> </th>
 			<th> </th>
+			<th> </th>
 	</thead>
 	
 	<tbody>
 	
-		<c:forEach items="${xml_list}" var="xml_list">
+		<c:forEach items="${xml_list_ap}" var="xml_list_ap">
 			<tr>				
-				<td>${xml_list.bno}</td>
-				<!-- td><c:out value="${xml_list.xml}" escapeXml="true" /></td -->
-				<td>${xml_list.regDate}</td>
+				<td>${xml_list_ap.bno}</td>
+				<!-- td><c:out value="${xml_list_ap.xml}" escapeXml="true" /></td -->
+				<td>${xml_list_ap.regDate}</td>
 				<td>
-				${xml_list.issueId}
+				${xml_list_ap.issueId}
 				</td>
 				<td>
-				<a href="/SBQA/xml_view?bno=${xml_list.bno}" target="_blank">보기</a>
+				<a href="/SBQA/xml_view_ap?bno=${xml_list_ap.bno}" target="_blank">보기</a>
 				</td>				
 				<td>
-				<a href="/SBQA/delete?bno=${xml_list.bno}">삭제</a>
+				<a href="/SBQA/delete?bno=${xml_list_ap.bno}">삭제</a>
 				</td>				
 				<td>
-				<a href="/SBQA/rarrequest?bno=${xml_list.bno}">역발행요청</a>
+				<a href="/SBQA/rarrequest?bno=${xml_list_ap.bno}">역발행요청</a>
+				</td>
+				<td>
+				<a href="/SBQA/rdetailrequest?bno=${xml_list_ap.bno}">역발행요청(+거래명세서)</a>
 				</td>
 
 			</tr>
