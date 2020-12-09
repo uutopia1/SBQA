@@ -30,5 +30,7 @@ public interface SBQADAO {
 	
 	//xml 삭제
 	public void delete(int bno) throws Exception;
+
+	public void call_back(String jsonParam) throws Exception;
 	
 }

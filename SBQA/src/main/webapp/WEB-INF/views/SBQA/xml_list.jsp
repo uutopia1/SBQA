@@ -7,11 +7,8 @@
 <title>xml원본 목록(매출전표)</title>
 </head>
 <body>
-
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
-</div>
-
+<%@ include file="include/nav.jsp" %>
+<div class="main">
 <table>
 	<thead>
 		<tr>
@@ -42,13 +39,13 @@
 				<a href="/SBQA/delete?bno=${xml_list.bno}">삭제</a>
 				</td>
 				<td>
-				<a href="/SBQA/dti_save?bno=${xml_list.bno}">저장</a>
+				<a href="/SBQA/OAPI/dti_save?bno=${xml_list.bno}">저장</a>
 				</td>
 				<td>
-				<a href="/SBQA/arissue?bno=${xml_list.bno}">발행</a>
+				<a href="/SBQA/OAPI/arissue?bno=${xml_list.bno}">발행</a>
 				</td>
 				<td>
-				<a href="/SBQA/detailarissue?bno=${xml_list.bno}">발행(+거래명세서)</a>
+				<a href="/SBQA/OAPI/detailarissue?bno=${xml_list.bno}">발행(+거래명세서)</a>
 				</td>
 
 
@@ -57,6 +54,6 @@
 	</tbody>
 	
 </table>
-
+</div>
 </body>
 </html>

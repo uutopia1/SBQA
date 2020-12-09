@@ -71,5 +71,9 @@ public class SBQADAOImpl implements SBQADAO {
 		sql.delete(namespace + ".delete", bno);
 	}
 		
-	
+	//callback 저장
+	@Override
+	public void call_back(String jsonParam) throws Exception {
+		sql.insert(namespace + ".call_back", jsonParam);
+	}
 }

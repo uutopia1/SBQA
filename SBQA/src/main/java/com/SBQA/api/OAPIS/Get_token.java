@@ -1,4 +1,4 @@
-package com.SBQA.api;
+package com.SBQA.api.OAPIS;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

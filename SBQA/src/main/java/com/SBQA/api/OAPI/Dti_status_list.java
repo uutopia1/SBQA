@@ -1,4 +1,4 @@
-package com.SBQA.api;
+package com.SBQA.api.OAPI;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -31,7 +31,10 @@ public class Dti_status_list {
 			jsonObj.put("SearchToDate", vo.getSearchToDate());
 			jsonObj.put("SearchComRegno", vo.getSearchComRegno()); 
 			jsonObj.put("RepoTypeCode", vo.getRepoTypeCode());
+			
+			//jsonObj.put("SearchDate", "S");
 
+			
 			URL url = new URL("http://demoapi.smartbill.co.kr/sb-api/request/");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("POST");

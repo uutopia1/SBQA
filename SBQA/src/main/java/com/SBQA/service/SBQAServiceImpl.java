@@ -68,5 +68,11 @@ public void delete(int bno) throws Exception {
 	dao.delete(bno);
 }
 
+//callback 저장
+@Override
+public void call_back(String jsonParam) throws Exception {
+	
+	dao.call_back(jsonParam);
+}
 
 }

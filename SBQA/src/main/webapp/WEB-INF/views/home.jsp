@@ -13,7 +13,7 @@
 <P>  The time on the server is ${serverTime}. </P>
 
 <div id="nav">
-	<%@ include file="./include/nav.jsp" %>
+	<%@ include file="SBQA/include/nav.jsp" %>
 </div>
 
 <!-- 

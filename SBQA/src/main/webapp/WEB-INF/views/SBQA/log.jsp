@@ -8,10 +8,9 @@
 </head>
 <body>
 
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
-</div>
+<%@ include file="include/nav.jsp" %>
 
+<div class="main">
 <table>
 	<thead>
 		<tr>
@@ -37,6 +36,6 @@
 	</tbody>
 	
 </table>
-
+</div>
 </body>
 </html>

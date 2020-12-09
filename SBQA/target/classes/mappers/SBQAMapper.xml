@@ -55,4 +55,11 @@
 			bno = #{bno}
 	</delete>
 	
+	<!-- call_back 저장 -->
+	<insert id="call_back" parameterType="String">
+		insert into
+			tbl_call_back(jsonParam)
+				values (#{jsonParam})
+	</insert>
+	
 </mapper>

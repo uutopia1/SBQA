@@ -26,11 +26,8 @@
 
 </head>
 <body>
-
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
-</div>
-
+<%@ include file="include/nav.jsp" %>
+<div class="main">
 <form method="post">
 	
 	<label>관리정보</label><br/>	
@@ -222,6 +219,6 @@
 	
 	
 </form>
-
+</div>
 </body>
 </html>	

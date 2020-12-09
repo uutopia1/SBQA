@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>발행</title>
+<title>거래명세서 발행</title>
 </head>
 <body>
 

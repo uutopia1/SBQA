@@ -28,6 +28,7 @@ public class ApiVO {
 	private String SupBuy_Type;
 	private String[] IssueId;
 	private String RepoTypeCode;
+	private String ListTypeCode;
 	
 	public String getMessageId() {
 		return MessageId;
@@ -193,6 +194,12 @@ public class ApiVO {
 	public void setRepoTypeCode(String repoTypeCode) {
 		RepoTypeCode = repoTypeCode;
 	}
-		
+	public String getListTypeCode() {
+		return ListTypeCode;
+	}
+	public void setListTypeCode(String listTypeCode) {
+		ListTypeCode = listTypeCode;
+	}
+	
 	
 }

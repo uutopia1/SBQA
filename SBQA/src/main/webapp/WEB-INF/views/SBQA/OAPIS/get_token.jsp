@@ -7,11 +7,8 @@
 <title>인증토큰 발급</title>
 </head>
 <body>
-
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
-</div>
-
+<%@ include file="../include/nav.jsp" %>
+<div class="main">
 <form method="post">
 	<label>메시지ID</label>
 	<input type="text" name="MessageId" value="sbqa-${time14 }" /><br/>
@@ -57,6 +54,6 @@
 	
 
 </form>
-
+</div>
 </body>
 </html>

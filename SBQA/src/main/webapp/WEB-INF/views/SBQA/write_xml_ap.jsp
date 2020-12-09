@@ -26,13 +26,9 @@
 
 </head>
 <body>
-
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
-</div>
-
-<form method="post">
-	
+<%@ include file="include/nav.jsp" %>
+<div class="main">
+<form method="post">	
 	<label>관리정보</label><br/>	
 	<label>서비스 관리 번호</label>
 	<input type="text" name="ExchangedDocument_ID" value="" /><br/>	
@@ -223,6 +219,6 @@
 	
 	
 </form>
-
+</div>
 </body>
 </html>	

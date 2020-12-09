@@ -8,10 +8,9 @@
 </head>
 <body>
 
-<div id="nav">
-	<%@ include file="../include/nav.jsp" %>
-</div>
+<%@ include file="include/nav.jsp" %>
 
+<div class="main">
 <table>
 	<thead>
 		<tr>
@@ -39,13 +38,13 @@
 				<a href="/SBQA/xml_view_ap?bno=${xml_list_ap.bno}" target="_blank">보기</a>
 				</td>				
 				<td>
-				<a href="/SBQA/delete?bno=${xml_list_ap.bno}">삭제</a>
+				<a href="/SBQA/delete_ap?bno=${xml_list_ap.bno}">삭제</a>
 				</td>				
 				<td>
-				<a href="/SBQA/rarrequest?bno=${xml_list_ap.bno}">역발행요청</a>
+				<a href="/SBQA/OAPI/rarrequest?bno=${xml_list_ap.bno}">역발행요청</a>
 				</td>
 				<td>
-				<a href="/SBQA/rdetailrequest?bno=${xml_list_ap.bno}">역발행요청(+거래명세서)</a>
+				<a href="/SBQA/OAPI/rdetailrequest?bno=${xml_list_ap.bno}">역발행요청(+거래명세서)</a>
 				</td>
 
 			</tr>
@@ -53,6 +52,6 @@
 	</tbody>
 	
 </table>
-
+</div>
 </body>
 </html>
