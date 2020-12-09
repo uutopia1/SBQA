@@ -245,7 +245,6 @@ public class SBQAController {
 //		model.addAttribute("Method", "GET");
 //		model.addAttribute("SBID", SBID);
 		
-		
 //	}
 	
 	//간편회원가입 call back URL
