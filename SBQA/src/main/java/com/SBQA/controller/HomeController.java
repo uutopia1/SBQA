@@ -1,5 +1,6 @@
 package com.SBQA.controller;
 
+
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -36,4 +37,9 @@ public class HomeController {
 		return "home";
 	}
 	
+	
+	@RequestMapping(value="/bill_scrape", method = RequestMethod.GET)
+	public void bill_scrape(Model model) throws Exception {
+				
+	}
 }

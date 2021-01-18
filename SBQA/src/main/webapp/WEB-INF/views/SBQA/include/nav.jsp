@@ -65,5 +65,14 @@ position:relative;
 	<li>
 		<a href="/SBQA/OAPI/dti_status">건별 상세 조회</a>
 	</li>
+	
+		TEST
+		
+	<li>
+		<a href="/SBQA/certificate">인증서 등록</a>
+	</li>
+	<li>
+		<a href="/SBQA/xslt">XSLT</a>
+	</li>
 </ul>
 </div>

@@ -8,18 +8,25 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.SBQA.api.AesCrypto;
+import com.SBQA.api.Certificate;
 import com.SBQA.api.Write_xml;
+import com.SBQA.api.Xslt;
 import com.SBQA.api.OAPI.Arap_repo;
 import com.SBQA.api.OAPI.Arissue;
 import com.SBQA.api.OAPI.DetailArissue;
@@ -33,6 +40,7 @@ import com.SBQA.api.OAPIS.Os_dti_list;
 import com.SBQA.api.OAPIS.Os_dti_xml;
 import com.SBQA.domain.ApiVO;
 import com.SBQA.domain.DBXmlVO;
+import com.SBQA.domain.JsonVO;
 import com.SBQA.domain.SBQAVO;
 import com.SBQA.domain.XmlVO;
 import com.SBQA.service.SBQAService;
@@ -236,29 +244,27 @@ public class SBQAController {
 		return "redirect";
 	}
 	
-	//간편회원가입 call back URL
-//	@RequestMapping(value = "/call_back", method=RequestMethod.GET)
-//	public void getCall_back(Model model, @RequestParam("SBID") String SBID) throws Exception {
-//		
-//		//service.call_back(SBID);
-//		
-//		model.addAttribute("Method", "GET");
-//		model.addAttribute("SBID", SBID);
-		
-//	}
-	
+
+
 	//간편회원가입 call back URL
 	@RequestMapping(value = "/call_back", method=RequestMethod.POST, produces="application/json; charset=utf8")
-	public void postCall_back(Model model, @RequestBody HashMap<String, String> param) throws Exception {
+	public void postCall_back(Model model, @RequestBody HashMap<String, String> param, HttpServletRequest request
+) throws Exception {
 
 		//String SBID = param.get("SBID");
 		String jsonParam = param.toString();
+		String uri = request.getRequestURL().toString();
+		String referer = request.getHeader("Referer");
+		String ip = request.getRemoteAddr();
 		
 		//model.addAttribute("Method", "POST");
 		//model.addAttribute("SBID", SBID);
 		
 		//System.out.println(SBID);
 		System.out.println(jsonParam);
+		System.out.println(uri);
+		System.out.println(referer);
+		System.out.println(ip);
 		
 		service.call_back(jsonParam);
 		
@@ -266,5 +272,45 @@ public class SBQAController {
 
 		
 	}
+
+
+
+
+	
+	//SBMS 인증서 등록 get
+		@RequestMapping(value="/certificate", method=RequestMethod.GET)
+		public void getGet_token(Model model) throws Exception {	
+						
+		}
+		
+	//SBMS 인증서 등록 post
+		@RequestMapping(value="/certificate", method=RequestMethod.POST)
+		public void postCertificate(Model model, @RequestParam("corpRegNo") String corpRegNo, @RequestParam("password") String password, @RequestParam("signCertPrivate") MultipartFile signCertPrivate, @RequestParam("signCertPublic") MultipartFile signCertPublic) throws Exception{
+			
+			Certificate cert = new Certificate();
+			String[] result = null;
+			result = cert.certificate(corpRegNo, password, signCertPrivate, signCertPublic);
+			
+			model.addAttribute("result0", result[0]);
+			model.addAttribute("result1", result[1]);
+			
+		}
+		
+	//xslt get
+		@RequestMapping(value="/xslt", method=RequestMethod.GET)
+		public void getXslt(Model model) throws Exception {	
+						
+		}
+		
+	//xslt_view get
+		@RequestMapping(value="/xslt_view", method=RequestMethod.GET)
+		public void getXslt_view(Model model) throws Exception{
+			
+			Xslt xs = new Xslt();
+			String xslt = xs.xslt();
+			
+			model.addAttribute("xslt", xslt);
+			
+		}
 	
 }

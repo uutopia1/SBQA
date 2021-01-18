@@ -3,6 +3,8 @@ package com.SBQA.service;
 import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.SBQA.domain.ApiVO;
 import com.SBQA.domain.DBXmlVO;
 import com.SBQA.domain.SBQAVO;
@@ -32,5 +34,6 @@ public interface SBQAService {
 	public void delete(int bno) throws Exception;
 
 	public void call_back(String jsonParam) throws Exception;
+	
 
 }

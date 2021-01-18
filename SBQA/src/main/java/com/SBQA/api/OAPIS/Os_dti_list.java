@@ -6,8 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.*;
 
 import com.SBQA.domain.ApiVO;
 
@@ -110,7 +109,7 @@ public class Os_dti_list {
 
 			
 		} catch (Exception e) {
-			result[1] = e.getMessage();
+			//result[1] = e.getMessage();
 		}
 		
 		return result;

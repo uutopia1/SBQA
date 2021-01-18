@@ -69,29 +69,29 @@ public class Preview_form {
 			    int totalCount = jsonArray.length();
 			    if (0 < totalCount) {
 			        JSONObject jsonTable1 = (JSONObject) jsonArray.get(0); //공급받는자용 매입 세금계산서
-			        System.out.println(jsonTable1.get("CONTENT").toString());
+			        //System.out.println(jsonTable1.get("CONTENT").toString());
 			        JSONObject jsonTable2 = (JSONObject) jsonArray.get(1); //공급받는자용 매입 계산서
-			        System.out.println(jsonTable2.get("CONTENT").toString());
+			        //System.out.println(jsonTable2.get("CONTENT").toString());
 			        JSONObject jsonTable3 = (JSONObject) jsonArray.get(2); //공급받는자용 위수탁 매입 세금계산서
-			        System.out.println(jsonTable3.get("CONTENT").toString());
+			        //System.out.println(jsonTable3.get("CONTENT").toString());
 			        JSONObject jsonTable4 = (JSONObject) jsonArray.get(3); //공급받는자용 위수탁 매입 계산서
-			        System.out.println(jsonTable4.get("CONTENT").toString());
+			        //System.out.println(jsonTable4.get("CONTENT").toString());
 			        JSONObject jsonTable5 = (JSONObject) jsonArray.get(4); //공급자용 매출 세금계산서
-			        System.out.println(jsonTable5.get("CONTENT").toString());
+			        //System.out.println(jsonTable5.get("CONTENT").toString());
 			        JSONObject jsonTable6 = (JSONObject) jsonArray.get(5); //공급자용 매출 계산서
-			        System.out.println(jsonTable6.get("CONTENT").toString());
+			        //System.out.println(jsonTable6.get("CONTENT").toString());
 			        JSONObject jsonTable7 = (JSONObject) jsonArray.get(6); //공급자용 위수탁 매출 세금계산서
-			        System.out.println(jsonTable7.get("CONTENT").toString());
+			        //System.out.println(jsonTable7.get("CONTENT").toString());
 			        JSONObject jsonTable8 = (JSONObject) jsonArray.get(7); //공급자용 위수탁 매출 계산서
-			        System.out.println(jsonTable8.get("CONTENT").toString());
+			        //System.out.println(jsonTable8.get("CONTENT").toString());
 			        JSONObject jsonTable9 = (JSONObject) jsonArray.get(8); //거래명세서(과세)
-			        System.out.println(jsonTable8.get("CONTENT").toString());
+			        //System.out.println(jsonTable8.get("CONTENT").toString());
 			        JSONObject jsonTable10 = (JSONObject) jsonArray.get(9); //거래명세서(면세)
-			        System.out.println(jsonTable8.get("CONTENT").toString());
+			        //System.out.println(jsonTable8.get("CONTENT").toString());
 			        JSONObject jsonTable11 = (JSONObject) jsonArray.get(10); //위수탁 거래명세서(과세)
-			        System.out.println(jsonTable8.get("CONTENT").toString());
+			        //System.out.println(jsonTable8.get("CONTENT").toString());
 			        JSONObject jsonTable12 = (JSONObject) jsonArray.get(11); //위수탁 거래명세서(면세)
-			        System.out.println(jsonTable8.get("CONTENT").toString());
+			        //System.out.println(jsonTable8.get("CONTENT").toString());
 			        
 			        if(arap == "ar") {
 			        	xsl = jsonTable5.get("CONTENT").toString();
