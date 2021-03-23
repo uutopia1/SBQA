@@ -3,6 +3,7 @@ package com.SBQA.controller;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -254,6 +255,46 @@ public class SBQAController {
 		//String SBID = param.get("SBID");
 		String jsonParam = param.toString();
 		String uri = request.getRequestURL().toString();
+		String ip = request.getRemoteAddr();
+		String host = request.getRemoteHost();
+		String strName = null;
+		String strValue = null;
+		int port = request.getRemotePort();
+		Enumeration oHeader = request.getHeaderNames();
+		while(oHeader.hasMoreElements())
+		{
+			strName = (String)oHeader.nextElement();
+			strValue = request.getHeader(strName);
+			System.out.println(strName + " : " + strValue);
+		}
+		
+		
+		//model.addAttribute("Method", "POST");
+		//model.addAttribute("SBID", SBID);
+		
+		//System.out.println(SBID);
+		System.out.println(jsonParam);
+		System.out.println("getRequestURL : " + uri);
+		System.out.println("getRemoteAddr : " + ip);
+		System.out.println("getRemoteHost : " + host);
+		System.out.println("getRemotePort : " + port);
+
+		
+		service.call_back(jsonParam);
+		
+		//service.call_back(SBID);
+
+		
+	}
+
+/*	//web-hook URL
+	@RequestMapping(value = "/webhook", method=RequestMethod.POST, produces="application/json; charset=utf8")
+	public void postWebhook(Model model, @RequestBody HashMap<String, String> param, HttpServletRequest request
+) throws Exception {
+		
+		//String SBID = param.get("SBID");
+		String jsonParam = param.toString();
+		String uri = request.getRequestURL().toString();
 		String referer = request.getHeader("Referer");
 		String ip = request.getRemoteAddr();
 		
@@ -266,14 +307,12 @@ public class SBQAController {
 		System.out.println(referer);
 		System.out.println(ip);
 		
-		service.call_back(jsonParam);
+		//service.webhook(jsonParam);
 		
 		//service.call_back(SBID);
-
-		
+			
 	}
-
-
+*/
 
 
 	
